@@ -41,6 +41,7 @@ public class DownloadActivty extends BaseActivity {
 
         if (vip_level==0){
             vip_bg_img.setImageLevel(0);
+
         }else {
             vip_bg_img.setImageLevel(1);
         }
