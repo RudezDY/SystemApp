@@ -37,7 +37,7 @@ public class DetailsActivity extends BaseActivity {
 
     int id;
     int vip_level;
-    String order_url,msg_url;
+    String order_url,msg_url,download_url;
 
     ExlporerDetailsObj.ExplorerDetails data;
 
@@ -65,6 +65,7 @@ public class DetailsActivity extends BaseActivity {
                 if ("1".equals(code)){
                     data=new Gson().fromJson(result,ExlporerDetailsObj.class).data;
                     vip_level=new Gson().fromJson(result,ExlporerDetailsObj.class).vip;
+                    download_url=data.download_url;
                     setView();
                 }else {
                     ToastUtil.show(msg);
@@ -103,6 +104,7 @@ public class DetailsActivity extends BaseActivity {
                 intent.putExtra("vip",vip_level);
                 intent.putExtra("order_url",order_url);
                 intent.putExtra("msg_url",msg_url);
+                intent.putExtra("download_url",msg_url);
                 startActivity(intent);
                 break;
         }

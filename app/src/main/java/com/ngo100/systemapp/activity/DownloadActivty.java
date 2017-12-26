@@ -28,7 +28,7 @@ public class DownloadActivty extends BaseActivity {
     private Button pay_btn;
 
     int vip_level,payType;
-    String order_url,msg_url;
+    String order_url,msg_url,download_url;
     @Override
     protected void init() {
         wechat_radio.setOnClickListener(this);
@@ -36,6 +36,7 @@ public class DownloadActivty extends BaseActivity {
         pay_btn.setOnClickListener(this);
         order_url=getIntent().getStringExtra("order_url");
         msg_url=getIntent().getStringExtra("msg_url");
+        download_url=getIntent().getStringExtra("download_url");
         vip_level=getIntent().getIntExtra("vip",0);
         setTitleBar("VIP安装");
 
@@ -67,6 +68,10 @@ public class DownloadActivty extends BaseActivity {
                 payType=2;
                 break;
             case R.id.pay_btn:
+                if (vip_level>0){
+                    AutoWedActivity.startAty(mActivity,download_url);
+                    break;
+                }
                 if (payType==1){
                     ToastUtil.show("微信支付");
                 }else if (payType==2){
