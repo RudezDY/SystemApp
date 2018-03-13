@@ -3,6 +3,7 @@ package com.ngo100.systemapp.base;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -17,12 +18,15 @@ import com.ngo100.systemapp.app.App;
 import com.ngo100.systemapp.user.User;
 import com.ngo100.systemapp.util.ActivityTaskManeger;
 import com.ngo100.systemapp.util.ScreenUtils;
+import com.ngo100.systemapp.util.SharedpreferencesUtil;
 import com.ngo100.systemapp.widget.BaseSwipeRefreshLayout;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.x;
+
+import static android.os.Build.VERSION_CODES.LOLLIPOP;
 
 /**
  * Created by donghui on 2017/6/16.
@@ -36,6 +40,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     Intent startAtyIntent;
     public int screenWidth, screenHeight;//屏幕宽高
 
+    protected SharedpreferencesUtil sharedpreferencesUtil;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +51,18 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         app = App.getInstance();
         x.view().inject(this);
         user= User.getInstance();
+        sharedpreferencesUtil=new SharedpreferencesUtil(mActivity,"systemApp");
         screenWidth = ScreenUtils.getScreenWidth(mActivity);
         screenHeight = ScreenUtils.getScreenHeight(mActivity);
+        if (Build.VERSION.SDK_INT>=LOLLIPOP)
+            getWindow().setStatusBarColor(getResources().getColor(R.color.color_titlebar));
         init();
     }
 
     protected ImageView backImg;
     protected ImageView msg_img;
     protected ImageView order_img;
+    protected ImageView qq_img;
     protected TextView title_tv;
     protected RelativeLayout title_layout;
     protected void setTitleBar(String title){
@@ -64,6 +74,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             msg_img= (ImageView) findViewById(R.id.msg_img);
         if (null==order_img)
             order_img= (ImageView) findViewById(R.id.order_img);
+        if (null==qq_img)
+            qq_img= (ImageView) findViewById(R.id.qq_img);
         if (null==title_tv)
             title_tv= (TextView) findViewById(R.id.title_tv);
 

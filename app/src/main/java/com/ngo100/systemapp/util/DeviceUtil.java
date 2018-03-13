@@ -18,7 +18,13 @@ public class DeviceUtil {
 
     public static String getDeiceID(Context context){
         TelephonyManager tm= (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        return tm.getDeviceId().toString();
+        try{
+            return tm.getDeviceId().toString();
+
+        }catch (Exception e){
+
+        }
+        return  "";
     }
 
     /**

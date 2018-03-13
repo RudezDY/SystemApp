@@ -1,5 +1,6 @@
 package com.ngo100.systemapp.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -17,10 +18,9 @@ public class HomeObj {
 
     public int status;
     public String msg;
-    public int vip;
     public HomeData data;
 
-    public static class HomeData {
+    public class HomeData implements Serializable{
         /**
          * link : {"order_link":"http://systemapp.laoshi888.com/System/Resourcesapp/order/serial_number/866963022748422.html","notice_link":"http://systemapp.laoshi888.com/System/Resourcesapp/notice/serial_number/866963022748422.html"}
          * list : [{"id":1,"name":"汤姆猫跑酷-会说话1","introduction":"探索无穷无尽的跑酷世界","upload_time":"2017-12-15 14:28:02","version":"v2.0.1","packname":""},{"id":26,"name":"111","introduction":"111","upload_time":"2017-12-19 19:12:01","version":"111","packname":""}]
@@ -28,8 +28,11 @@ public class HomeObj {
 
         public LinkBean link;
         public List<AppsList> list;
+        public List<Category> category;
+        public String vip_time;
+        public int vip;
 
-        public static class LinkBean {
+        public class LinkBean  implements Serializable{
             /**
              * order_link : http://systemapp.laoshi888.com/System/Resourcesapp/order/serial_number/866963022748422.html
              * notice_link : http://systemapp.laoshi888.com/System/Resourcesapp/notice/serial_number/866963022748422.html
@@ -37,9 +40,12 @@ public class HomeObj {
 
             public String order_link;
             public String notice_link;
+            public String information_link;
+            public String thirdparty;
+            public long qq_link;
         }
 
-        public static class AppsList {
+        public class AppsList  implements Serializable{
             /**
              * id : 1
              * name : 汤姆猫跑酷-会说话1
@@ -56,5 +62,10 @@ public class HomeObj {
             public String version;
             public String packname;
         }
+    }
+    public class Category implements Serializable{
+        public int id;
+        public String name;
+        public List<String> chidren;
     }
 }

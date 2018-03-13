@@ -12,6 +12,7 @@ import com.ngo100.systemapp.bean.ExlporerDetailsObj;
 import com.ngo100.systemapp.http.HttpCallBack;
 import com.ngo100.systemapp.http.HttpUtil;
 import com.ngo100.systemapp.util.JSONParser;
+import com.ngo100.systemapp.util.LoadingDialogUtils;
 import com.ngo100.systemapp.util.ToastUtil;
 
 import org.xutils.view.annotation.ContentView;
@@ -20,8 +21,8 @@ import org.xutils.view.annotation.ViewInject;
 @ContentView(R.layout.activity_details)
 public class DetailsActivity extends BaseActivity {
 
-    @ViewInject(R.id.name_tv)
-    private TextView name_tv;
+//    @ViewInject(R.id.name_tv)
+//    private TextView name_tv;
     @ViewInject(R.id.developer_tv)
     private TextView developer_tv;
     @ViewInject(R.id.updatetime_tv)
@@ -57,6 +58,7 @@ public class DetailsActivity extends BaseActivity {
     }
 
     private void getData() {
+        LoadingDialogUtils.createLoadingDialog(mActivity).show();
         HttpUtil.getExplorerDetails(id, new HttpCallBack() {
             @Override
             public void onSuccess(String result) {
@@ -81,7 +83,7 @@ public class DetailsActivity extends BaseActivity {
 
     private void setView() {
         setTitleBar(data.name);
-        name_tv.setText(data.name);
+//        name_tv.setText(data.name);
         developer_tv.setText("开发者："+data.developer);
         updatetime_tv.setText("更新时间："+data.upload_time);
         versionName_tv.setText("版本号："+data.version);
@@ -100,11 +102,18 @@ public class DetailsActivity extends BaseActivity {
                 AutoWedActivity.startAty(mActivity,order_url);
                 break;
             case R.id.download_btn:
+                if (vip_level>0){
+                    AutoWedActivity.startAty(mActivity,download_url);
+                    break;
+                }
                 Intent intent=new Intent(mActivity,DownloadActivty.class);
                 intent.putExtra("vip",vip_level);
                 intent.putExtra("order_url",order_url);
                 intent.putExtra("msg_url",msg_url);
                 intent.putExtra("download_url",msg_url);
+                intent.putExtra("month",data.month);
+                intent.putExtra("quarter",data.quarter);
+                intent.putExtra("year",data.year);
                 startActivity(intent);
                 break;
         }

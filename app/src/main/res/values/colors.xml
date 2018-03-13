@@ -9,6 +9,7 @@
     <color name="gray_f2f2f2">#f2f2f2</color>
     <color name="gray_fbfbfb">#fbfbfb</color>
     <color name="gray">#999999</color>
+    <color name="e6a700">#e6a700</color>
     <color name="blue">#0099e5</color>
     <color name="blue_e9f8fd">#e9f8fd</color>
     <color name="green_27e780">#27e780</color>
@@ -22,4 +23,5 @@
     <color name="black_transparent_66">#66000000</color>
     <color name="gray_light">#f2f2f2</color>
     <color name="gray_font_dark">#646464</color>
+    <color name="color_titlebar">#F2575B</color>
 </resources>

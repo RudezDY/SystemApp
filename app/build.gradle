@@ -4,16 +4,40 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.ngo100.systemapp"
-        minSdkVersion 19
+        minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "2ea7c2be69ee7fb71ff04ba1", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /** ************ 修改打包apk名字 *************************/
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = outputFile.name.replace(outputFile.name, "system-${defaultConfig.versionName}.apk")
+                outputFileName = fileName
+            }
         }
     }
 }
@@ -30,4 +54,16 @@ dependencies {
     compile 'com.github.zzz40500:android-shapeLoadingView:1.0.3.2'
     implementation 'com.android.support:appcompat-v7:26.0.2'
     implementation 'com.android.support:recyclerview-v7:26.0.2'
+    compile 'com.github.razerdp:BasePopup:1.8.4'
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
+    // 此处以JCore 1.1.7 版本为例。
+    implementation 'com.android.support:design:26.0.2'
+    implementation 'com.jakewharton:butterknife:8.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+    compile 'com.huangyirui:mediaselect_library:1.0.0'
+    compile 'com.meetic.marypopup:marypopup:1.0.0'
+    compile 'com.meetic.dragueur:dragueur:1.0.3'
+    compile 'de.hdodenhof:circleimageview:2.2.0'
 }

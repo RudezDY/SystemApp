@@ -2,7 +2,6 @@ package com.ngo100.systemapp.app;
 
 import android.app.Application;
 
-
 import org.xutils.x;
 
 /**
@@ -24,6 +23,7 @@ public class App extends Application {
         app=this;
         x.Ext.init(this);
         x.Ext.setDebug(true);
+//        startActivity(new Intent(this, MainActivity.class));
     }
 
 

@@ -17,6 +17,8 @@ public class ConstantParser {
     public static final String GETHOMELIST = "Resourceslist/resources_list";
     //资源详情
     public static final String EXPLORERDETAILS = "Resourceslist/resources_info";
+    //充值
+    public static final String RECHARGE = "Resourceslist/get_order_number";
 
 
 }

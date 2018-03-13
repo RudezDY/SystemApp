@@ -42,5 +42,8 @@ public class ExlporerDetailsObj {
         public String packname;
         public String upload_time;
         public String developer;
+        public float month;
+        public float quarter;
+        public float year;
     }
 }
