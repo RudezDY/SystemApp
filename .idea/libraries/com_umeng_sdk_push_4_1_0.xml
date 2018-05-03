@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.umeng.sdk:push-4.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/push-4.1.0.aar/1f23fe862168d63dab8bf460ea2798e7/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/push-4.1.0.aar/1f23fe862168d63dab8bf460ea2798e7/jars/libs/alicloud-android-utils-1.0.3.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/push-4.1.0.aar/1f23fe862168d63dab8bf460ea2798e7/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/push-4.1.0.aar/1f23fe862168d63dab8bf460ea2798e7/jars/libs/alicloud-android-sdk-httpdns-1.1.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.umeng.sdk/push/4.1.0/fdcea7db3cff238ea101d8790d581fe96b8c872/push-4.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

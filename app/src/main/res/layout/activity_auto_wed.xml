@@ -10,7 +10,7 @@
         android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@color/blue">
+        android:background="@color/color_titlebar">
         <ImageView
             android:id="@+id/closeImg"
             android:layout_width="24dp"

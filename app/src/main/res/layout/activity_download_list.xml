@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e8e8e8"
+    tools:context="com.grimos.push.activity.DownloadListActivity">
+    <include layout="@layout/layout_title"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textSize="10dp"
+        android:text="禁止转发和盗卖vip资源，否则将取消vip资格"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_download_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -14,8 +14,15 @@
         android:paddingTop="24dp"
         android:background="@mipmap/slide_bg">
 
-
-        <de.hdodenhof.circleimageview.CircleImageView
+        <TextView
+            android:id="@+id/tv_deviceID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            android:text="我的设备码(复制)"/>
+        <ImageView
             android:id="@+id/iv_vip"
             android:layout_width="90dp"
             android:layout_height="90dp"
@@ -32,6 +39,20 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/iv_vip"
             android:text=""/>
+
+        <TextView
+            android:id="@+id/tv_jixing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:text=""/>
+
+        <ImageView
+            android:id="@+id/img_unbind"
+            android:layout_width="56dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/unbind"/>
     </LinearLayout>
 
     <LinearLayout
@@ -115,7 +136,28 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:textColor="@color/black"
-            android:text="开发者选项"/>
+            android:text="VIP服务"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="4dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="4dp"
+            android:layout_margin="4dp"
+            android:src="@mipmap/customer"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/black"
+            android:text="联系客服"/>
     </LinearLayout>
 
 

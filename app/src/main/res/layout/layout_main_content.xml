@@ -6,7 +6,7 @@
     android:id="@+id/layout_content"
     android:background="#f7f7f7">
     <include layout="@layout/layout_title"/>
-    <com.ngo100.systemapp.widget.BaseSwipeRefreshLayout
+    <com.grimos.push.widget.BaseSwipeRefreshLayout
         android:id="@+id/swipeLayout"
         android:layout_width="match_parent"
         android:layout_weight="1"
@@ -15,7 +15,7 @@
             android:id="@+id/home_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    </com.ngo100.systemapp.widget.BaseSwipeRefreshLayout>
+    </com.grimos.push.widget.BaseSwipeRefreshLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
@@ -23,6 +23,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:orientation="horizontal">
         <LinearLayout
             android:id="@+id/homepage_layout"
@@ -31,8 +32,8 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:padding="4dp"
                 android:src="@mipmap/icon_home"
                 android:layout_gravity="center_horizontal"/>
@@ -40,8 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:padding="4dp"
-                android:text="首页"/>
+                android:paddingBottom="4dp"
+                android:text="玩机"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -49,8 +50,8 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:padding="4dp"
                 android:src="@mipmap/icon_res_s"
                 android:layout_gravity="center_horizontal"/>
@@ -58,9 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:padding="4dp"
+                android:paddingBottom="4dp"
                 android:textColor="@color/black"
-                android:text="资源"/>
+                android:text="Rom"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/other_layout"
@@ -69,8 +70,8 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:padding="4dp"
                 android:src="@mipmap/icon_other"
                 android:layout_gravity="center_horizontal"/>
@@ -78,8 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:padding="4dp"
-                android:text="其他"/>
+                android:paddingBottom="4dp"
+                android:text="工具箱"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

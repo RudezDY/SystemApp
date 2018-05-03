@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.meetic.marypopup:marypopup-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/marypopup-1.0.0.aar/1005e7aaaaeb8cf491c6ac79d71aec1c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/marypopup-1.0.0.aar/1005e7aaaaeb8cf491c6ac79d71aec1c/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.meetic.marypopup/marypopup/1.0.0/f31112b3871c41f4599d7a85108df928ae35f519/marypopup-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

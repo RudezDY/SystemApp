@@ -16,12 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="序列号：asfagsasgs"/>
+            android:textColor="@color/black"
+            android:text="序列号："/>
         <TextView
             android:id="@+id/copy_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="复制"
+            android:textColor="@color/colorPrimary"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:paddingLeft="12dp"
@@ -69,6 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center"
+            android:textColor="@color/colorPrimary"
             android:text="确认"/>
     </LinearLayout>
 

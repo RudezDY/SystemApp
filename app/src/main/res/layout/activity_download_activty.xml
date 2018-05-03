@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ngo100.systemapp.activity.DownloadActivty">
+    tools:context="com.grimos.push.activity.DownloadActivty">
     <include layout="@layout/layout_title"/>
 
     <ScrollView
@@ -50,12 +50,64 @@
                     android:padding="12dp"
                     android:layout_weight="1">
                     <ImageView
+                        android:visibility="gone"
                         android:id="@+id/vip_bg_img"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:src="@drawable/level_vip"
                         android:scaleType="centerInside"/>
+                    <ImageView
+                        android:id="@+id/vip_bg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/vip_bg"
+                        android:scaleType="centerInside"/>
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/layout_not_vip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_centerInParent="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24sp"
+                            android:textColor="@color/white"
+                            android:text="Sorry~~"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/white"
+                            android:text="您还不是vip会员，无法下载此资源"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/layout_vip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_centerInParent="true">
+                        <TextView
+                            android:id="@+id/tv_vip_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text=""/>
+                        <TextView
+                            android:id="@+id/tv_recharge_record"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:background="@mipmap/gradient_btn_bg"
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/white"
+                            android:text="充值记录"/>
+                    </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
             <TextView
