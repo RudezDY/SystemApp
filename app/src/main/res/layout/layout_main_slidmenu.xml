@@ -44,14 +44,17 @@
             android:id="@+id/tv_jixing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/red_e72929"
+            android:gravity="center"
             android:layout_marginTop="8dp"
             android:layout_centerHorizontal="true"
             android:text=""/>
 
         <ImageView
+            android:visibility="gone"
             android:id="@+id/img_unbind"
-            android:layout_width="56dp"
-            android:layout_height="20dp"
+            android:layout_width="74dp"
+            android:layout_height="24dp"
             android:src="@mipmap/unbind"/>
     </LinearLayout>
 

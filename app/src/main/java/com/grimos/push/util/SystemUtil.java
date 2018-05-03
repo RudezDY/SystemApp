@@ -211,12 +211,12 @@ public class SystemUtil {
         HttpUtil.readMsg(new HttpCallBack() {
             @Override
             public void onSuccess(String result) {
-                String code=JSONParser.getStringFromJsonString("status",result);
-                String msg=JSONParser.getStringFromJsonString("msg",result);
-                if ("1".equals(code))
+//                String code=JSONParser.getStringFromJsonString("status",result);
+//                String msg=JSONParser.getStringFromJsonString("msg",result);
+//                if ("1".equals(code))
                     AutoWedActivity.startAty(context,url);
-                else
-                    ToastUtil.show(msg);
+//                else
+//                    ToastUtil.show(msg);
             }
 
             @Override

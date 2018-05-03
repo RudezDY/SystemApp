@@ -52,7 +52,7 @@ public class CustomerActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_contact_qq:
-                SystemUtil.joinqq(mActivity,tv_qq_num.getText().toString());
+                SystemUtil.joinqq(mActivity,tv_qq_num.getText().toString().trim());
                 break;
             case R.id.tv_contact_weixin:
                 ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -60,7 +60,7 @@ public class CustomerActivity extends BaseActivity {
                 SystemUtil.toWechat(mActivity);
                 break;
             case R.id.tv_contact_email:
-                SystemUtil.sendEmail(mActivity,new String[]{tv_email_num.getText().toString()},"意见反馈","您想说的话");
+                SystemUtil.sendEmail(mActivity,new String[]{tv_email_num.getText().toString().trim()},"意见反馈","您想说的话");
                 break;
         }
     }

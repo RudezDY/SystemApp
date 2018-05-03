@@ -149,6 +149,21 @@ public class TextUtil{
         return this;
     }
 
+    public TextUtil setSpanClick(final TextView tv, String str, int start, int end, final View.OnClickListener onClickListener ){
+        SpannableStringBuilder spannableString = new SpannableStringBuilder();
+        spannableString.append(str);
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View view) {
+                onClickListener.onClick(view);
+            }
+        };
+        spannableString.setSpan(clickableSpan, start, end, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+        tv.setText(spannableString);
+        tv.setMovementMethod(LinkMovementMethod.getInstance());
+        return this;
+    }
+
 
     public TextUtil insertImg(TextView tv, String str, int index, ImageSpan imageSpan ) {
         SpannableStringBuilder spannableString = new SpannableStringBuilder();

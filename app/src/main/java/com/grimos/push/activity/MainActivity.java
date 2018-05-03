@@ -151,7 +151,6 @@ public class MainActivity extends BaseActivity {
         tv_deviceID.setOnClickListener(onMenuClickListener);
         tv_jixing.setOnClickListener(onMenuClickListener);
         img_unbind.setOnClickListener(onMenuClickListener);
-//        tv_deviceID.setText("我的设备码："+User.getInstance().identifier+"\n(点击复制)");
         String sbm="我的设备码："+User.getInstance().identifier+"\n(点击复制)";
         new TextUtil().setTextSize(tv_deviceID,sbm,sbm.length()-6,sbm.length(), DensityUtil.dp2px(mActivity,14));
 
@@ -247,7 +246,7 @@ public class MainActivity extends BaseActivity {
 
                     break;
                 case R.id.tv_jixing://解绑机型
-//                    unBind();
+                    unBind();
                     break;
                 case R.id.img_unbind://解绑机型
                     unBind();
@@ -359,6 +358,7 @@ public class MainActivity extends BaseActivity {
     //获取首页数据
     private void getData() {
         HttpUtil.getHomeList(jixing, new HttpCallBack() {
+//        HttpUtil.getHomeList("", new HttpCallBack() {
             @Override
             public void onSuccess(String result) {
 
@@ -377,7 +377,6 @@ public class MainActivity extends BaseActivity {
                         intent.putExtra("data",homedData);
                         startActivity(intent);
                     }
-                    jixing=sharedpreferencesUtil.getString("jixing");
                     sharedpreferencesUtil.putString("jixing",homedData.usermode);
                     //保存首页信息到本地
                     sharedpreferencesUtil.putString("homeData",new Gson().toJson(homedData));
@@ -407,9 +406,10 @@ public class MainActivity extends BaseActivity {
         iv_vip.setImageLevel(homedData.vip);
         String jixing=sharedpreferencesUtil.getString("jixing");
         if (!TextUtils.isEmpty(jixing)){
-//            String jxStr="我的机型:"+jixing+"(解绑)";
-            String jxStr="我的机型:"+jixing;
-//            new TextUtil().setTextColor(tv_jixing,jxStr,jxStr.length()-4,jxStr.length(),"#ff0000");
+            String jxStr="我的机型:"+jixing+"(解绑)";
+//            String jxStr="我的机型:"+jixing;
+//            new TextUtil().setSpanClick(tv_jixing,jxStr,jxStr.length()-4,jxStr.length(),onMenuClickListener);
+            new TextUtil().setTextColor(tv_jixing,jxStr,jxStr.length()-4,jxStr.length(),"#0099e5");
 
         }else {
             tv_jixing.setText("");

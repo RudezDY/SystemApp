@@ -4,9 +4,11 @@ import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
@@ -66,7 +68,18 @@ public class WeChatSkipDialog extends Dialog {
         ButterKnife.bind(this);
         setCancelable(false);
         serial_tv.setText("序列码："+serialCode);
-        skip_tv.setText(skip);
+
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                skip_tv.setText(Html.fromHtml(skip,
+                        Html.FROM_HTML_OPTION_USE_CSS_COLORS | Html.FROM_HTML_MODE_COMPACT));
+            } else {
+                skip_tv.setText(Html.fromHtml(skip));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+//        skip_tv.setText(skip);
 
     }
 
